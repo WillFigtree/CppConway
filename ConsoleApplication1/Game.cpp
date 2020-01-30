@@ -9,12 +9,6 @@ Game::Game(int gameSize)
 	this->gameState = vector<vector<bool>>(gameSize, vector<bool>(gameSize, 0));
 }
 
-Game::~Game()
-{
-	gameState.clear();
-	gameState.shrink_to_fit();
-}
-
 int Game::getGameSize()
 {
 	return gameSize;
@@ -58,12 +52,8 @@ void Game::Update()
 		}
 	}
 
-	// Return the new game state to the caller
+	// Update the internal game state
 	gameState = newGameState;
-
-	// Release the duplicate game state data
-	newGameState.clear();
-	newGameState.shrink_to_fit();
 }
 
 int Game::SumNeighbours(int x, int y)

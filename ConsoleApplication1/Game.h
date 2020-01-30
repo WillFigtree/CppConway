@@ -5,7 +5,7 @@ class Game
 {
 public:
 	Game(int gameSize);
-	~Game();
+	~Game() = default;
 
 	void Update();
 	void SeedBlinker(int x, int y);

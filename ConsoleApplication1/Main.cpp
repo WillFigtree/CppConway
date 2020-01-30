@@ -33,9 +33,5 @@ int main(int argc, char *argv[])
 		this_thread::sleep_for(chrono::milliseconds(1000 / GAME_FREQUENCY));
 	}
 
-	// Release game and renderer resources
-	game->~Game();
-	renderer->~Renderer();
-
 	return 0;
 }
